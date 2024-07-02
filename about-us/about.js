@@ -11,13 +11,37 @@ console.log(h1DOM.innerText.toUpperCase());
 console.clear();
 
 const ulDOM = document.getElementsByTagName('ul');
-console.log(ulDOM);
+let index = 1;
 
-const liDOM = ulDOM[1].getElementsByTagName('li');
+for (const list of ulDOM) {
+    const liDOM = list.getElementsByTagName('li');
 
-for (let i = 0; i < liDOM.length; i++) {
-    console.log(liDOM[i].innerText);
+    for (const item of liDOM) {
+        item.innerText = `${index++}) ${item.innerText}`;
+    }
 }
 
+// const listItemsDOM = document.querySelector('li');
+// const listItemsDOM = document.querySelectorAll('ul:nth-child(6) > li');
 
-// elementas.innerText = '145621';
+const listItemsDOM = document.querySelectorAll('ul > li:first-child, ol > li:first-child');
+
+console.log('--------');
+console.log(listItemsDOM);
+
+const ulItemsDOM = document.querySelectorAll('ul > li:first-child');
+console.log(ulItemsDOM);
+
+const olItemsDOM = document.querySelectorAll('ol > li:first-child');
+console.log(olItemsDOM);
+
+const totalLiDomination = [...ulItemsDOM].concat(...olItemsDOM);
+console.log(totalLiDomination);
+
+const totalLiDomination2 = [...ulItemsDOM, ...olItemsDOM];
+console.log(totalLiDomination2);
+
+const darzasDOM = document
+    .getElementById('darzas')
+    .querySelectorAll('.pomidoras > li');
+console.log(pomidoroVaikaiDOM);
