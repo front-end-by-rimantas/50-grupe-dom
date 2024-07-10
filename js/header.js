@@ -7,7 +7,9 @@ const data = [
     { href: 'sportas', text: 'Sparta' },
 ];
 
-export function header(isHomepage = false) {
+export function header() {
+    const href = location.href.endsWith('/') ? location.href.slice(0, -1) : location.href;
+    const isHomepage = href === location.origin;
     const dot = isHomepage ? '' : '.';
     let navHTML = '';
 

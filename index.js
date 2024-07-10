@@ -14,4 +14,4 @@ buttonDOM.addEventListener('click', () => {
 });
 
 // 4 - BOOM!!!!!!!!!
-header(true);
+header();
